@@ -27,7 +27,7 @@ export default function SwiperComponent({ imageData }: any) {
                 alt='Image'
                 width={800}
                 height={600}
-                className='w-full aspect-[16/9] object-cover md:h-[80vh] origin-bottom'
+                className='w-full aspect-[16/9] object-cover origin-bottom'
               />
             </SwiperSlide>
           ))}

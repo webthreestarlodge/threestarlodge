@@ -16,7 +16,7 @@ export default async function Room() {
 
   return (
     <div className="pb-24 bg-[url('/images/flower-bg-o.png')]  bg-center ">
-      <div className='md:h-[60vh] w-full overflow-hidden mb-12'>
+      <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
         {bannerImage.image && (
           <Image
             src={urlFor(bannerImage.image)}
@@ -28,7 +28,7 @@ export default async function Room() {
         )}
       </div>
       <div className='px-12'>
-        <h1 className='text-5xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-12 '>
+        <h1 className='text-5xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
           Rooms
         </h1>
         <div className='min-h-screen'>

@@ -151,3 +151,12 @@
     rgba(55, 55, 55, 0.25) 0px 4px 18px,
     rgba(55, 55, 55, 0.02) 0px 2px 4px;
 }
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: #897172;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  color: #897172;
+}
