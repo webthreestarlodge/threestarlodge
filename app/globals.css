@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+.dark .prose strong {
+  color: #b6a999;
+}
+.prose strong {
+  color: #897172;
+}
 
 /* logo color #805456 */
 /* logo dark #4D2629 */

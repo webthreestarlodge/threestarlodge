@@ -4,7 +4,8 @@ import { accommodation } from "../schemas/accommodation";
 import { bannerImages } from "../schemas/bannerImages";
 import { excursions } from "../schemas/excursion";
 import { accordions } from "../schemas/accordions";
+import { aboutus } from "../schemas/aboutus";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, accommodation, bannerImages, excursions, accordions],
+  types: [hero, accommodation, bannerImages, excursions, accordions, aboutus],
 };

@@ -49,7 +49,7 @@ export default async function RoomDetails({
       </div>
       <div className='mb-6'>
         <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
-          {accommodationData.title}
+          {accommodationData.title && accommodationData.title}
         </h6>
       </div>
       <div>
