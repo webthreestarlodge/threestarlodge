@@ -50,7 +50,7 @@ export const accommodation = {
       type: "text",
     },
     {
-      name: "roomImages",
+      name: "images",
       title: "Room Images",
       type: "array",
       of: [

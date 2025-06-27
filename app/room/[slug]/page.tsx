@@ -12,7 +12,7 @@ async function getAccomodationData(slug: string) {
   const query = `*[_type == "accommodation" && slug.current == "${slug}"][0]{
   bannerImage,
   title,
-  roomImages
+  images
   }`;
   const data = await client.fetch(query);
   return data;
@@ -53,7 +53,7 @@ export default async function RoomDetails({
         </h6>
       </div>
       <div>
-        {accommodationData.roomImages && (
+        {accommodationData.images && (
           <SwiperComponent imageData={accommodationData} />
         )}
       </div>

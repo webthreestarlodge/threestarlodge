@@ -20,17 +20,18 @@ export default function SwiperComponent({ imageData }: any) {
           slidesPerView={1}
           loop
           thumbs={{ swiper: selectedImage }}>
-          {imageData.roomImages.map((image: any, index: any) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={urlFor(image)}
-                alt='Image'
-                width={800}
-                height={600}
-                className='w-full aspect-[16/9] object-cover origin-bottom'
-              />
-            </SwiperSlide>
-          ))}
+          {imageData.images &&
+            imageData.images.map((image: any, index: any) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={urlFor(image)}
+                  alt='Image'
+                  width={800}
+                  height={600}
+                  className='w-full aspect-[16/9] object-cover origin-bottom'
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
         <div className='py-2'>
           <Swiper
@@ -41,17 +42,18 @@ export default function SwiperComponent({ imageData }: any) {
             loop
             onSwiper={setSelectedImage}
             className='mySwiper'>
-            {imageData.roomImages.map((image: any, index: any) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={urlFor(image)}
-                  alt='Image'
-                  width={100}
-                  height={80}
-                  className='w-full cursor-pointer aspect-[16/9] object-cover'
-                />
-              </SwiperSlide>
-            ))}
+            {imageData.images &&
+              imageData.images.map((image: any, index: any) => (
+                <SwiperSlide key={index}>
+                  <Image
+                    src={urlFor(image)}
+                    alt='Image'
+                    width={100}
+                    height={80}
+                    className='w-full cursor-pointer aspect-[16/9] object-cover'
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>
