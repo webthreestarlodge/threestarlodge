@@ -21,7 +21,7 @@ export default function Accordions({ data }: any) {
             <div key={item.id} className='pb-2 pt-1'>
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className='text-sm md:text-base text-white dark:text-gray-300 px-4 md:px-12 py-3 font-semibold bg-[#897172]/70 dark:bg-[#897172]/40 w-full text-start rounded-md cursor-pointer'>
+                className='text-sm md:text-base text-white dark:text-[#B6A999] px-4 md:px-12 py-3 font-semibold bg-[#897172]/70 dark:bg-[#897172]/40 w-full text-start rounded-md cursor-pointer'>
                 {item.question} {item.name}
               </button>
               <Collapse isOpened={openAccordion === item.id}>

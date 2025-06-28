@@ -8,14 +8,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='min-h-[60vh] w-screen bg-[#574142]  dark:bg-black duration-500 dark:border-t border-white  flex flex-col justify-between py-6 text-white dark:text-gray-300'>
+    <footer className='min-h-[60vh] w-screen bg-[#574142]/90 dark:bg-black text-white dark:text-[#B6A999] duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
       <div className=' md:flex justify-between items-start px-10'>
         <div className='flex md:hidden gap-2 md:gap-4 justify-center items-center'>
           <Link href={""}>
-            <AiFillFacebook size={42} color={"white"} />
+            <AiFillFacebook size={42} />
           </Link>
           <Link href={""}>
-            <AiFillInstagram size={42} color={"white"} />
+            <AiFillInstagram size={42} />
           </Link>
         </div>
         <div className='mt-12 md:mt-0'>
@@ -28,28 +28,14 @@ export default function Footer() {
               <p className='text-xs md:text-sm'>Phone: +960</p>
             </Link>
           </div>
-          {/* <div className='flex gap-2 items-center mb-2'>
-            <IoIosMail size={24} />
-            <Link href='mailto:'>
-              <p className='text-xs md:text-sm'>
-                Email: reservations@hevanamaldives.com
-              </p>
-            </Link>
-          </div> */}
-          {/* <div className='flex gap-2 items-center'>
-            <FaWhatsapp size={24} />
-            <Link href={"https://wa.me/"}>
-              <p className='text-xs md:text-sm'>WhatsApp: +960 7722212</p>
-            </Link>
-          </div> */}
         </div>
 
         <div className='hidden md:flex gap-2 md:gap-4 justify-center items-center'>
           <Link href={""}>
-            <AiFillFacebook size={42} color={"white"} />
+            <AiFillFacebook size={42} />
           </Link>
           <Link href={""}>
-            <AiFillInstagram size={42} color={"white"} />
+            <AiFillInstagram size={42} />
           </Link>
         </div>
 
@@ -70,7 +56,7 @@ export default function Footer() {
         </h5>
 
         <Link href={"https://www.ahmedareef.com/"}>
-          <h5 className='text-xs text-gray-200 mt-2'>
+          <h5 className='text-xs text-[#897172] dark:text-[#B6A999] mt-2'>
             Developed by Ahmed Areef
           </h5>
         </Link>

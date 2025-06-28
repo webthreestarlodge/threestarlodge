@@ -27,8 +27,8 @@ export default async function Room() {
           />
         )}
       </div>
-      <div className='px-12'>
-        <h1 className='text-5xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
+      <div className='px-8 md:px-12'>
+        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
           Rooms
         </h1>
         <div className='min-h-screen'>

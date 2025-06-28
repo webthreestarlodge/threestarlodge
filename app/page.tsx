@@ -33,17 +33,21 @@ export default async function Home() {
     <div className=" w-full bg-[url('/images/flower-bg-o.png')] bg-center">
       <HeroSection data={heroData} />
 
-      <div className='px-4 md:px-12 py-12 md:my-12 '>
+      <div className='px-4 md:px-12 py-24 md:my-12 '>
+        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
+          Rooms
+        </h1>
         <Accommodation />
       </div>
       <div className='px-4 md:px-12  py-12 md:my-12 min-h-screen'>
+        <h1 className='text-[#897172] dark:text-[#B6A999] text-3xl md:text-7xl pb-8 md:pb-12 text-center font-extrabold'>
+          Excursions
+        </h1>
         <Excursions />
       </div>
       <div className='w-[90vw] mx-auto'>
         <Accordions data={accordionData} />
       </div>
-      {/* <div className='h-screen '></div> */}
-      <div className='h-screen bg-purple-300/40'></div>
     </div>
   );
 }

@@ -37,7 +37,7 @@ export default async function Aboutus() {
       <h1 className='text-5xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
         About us
       </h1>
-      <section className='px-4 md:px-24 flex flex-col md:flex-row gap-4'>
+      <section className='px-8 md:px-24 flex flex-col md:flex-row gap-4'>
         <div className='flex-1 order-1 md:order-2'>
           <Image
             src={urlFor(aboutus[0].mainImage)}
@@ -47,7 +47,7 @@ export default async function Aboutus() {
             className='w-full'
           />
         </div>
-        <div className='flex-1 order-2 md:order-1 prose text-[#897172]  dark:text-[#B6A999]'>
+        <div className='flex-1 order-2 md:order-1 prose text-[#897172] dark:text-[#B6A999] mt-4 md:mt-0'>
           <PortableText value={aboutus[0].description} />
         </div>
       </section>

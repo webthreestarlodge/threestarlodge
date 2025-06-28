@@ -29,7 +29,7 @@ export default async function RoomDetails({
   const excursionData = await getExcursionData(slug);
 
   return (
-    <div className="bg-[url('/images/flower-bg-o.png')]  bg-center">
+    <div className="bg-[url('/images/flower-bg-o.png')]  bg-center ">
       <div className='h-auto md:h-80 w-full overflow-hidden mb-6'>
         {excursionData.bannerImage && (
           <Image
@@ -48,13 +48,20 @@ export default async function RoomDetails({
           <FaArrowLeft /> Back
         </Link>
       </div>
-      <div className='mb-6'>
-        <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
-          {excursionData.excursionName && excursionData.excursionName}
-        </h6>
-      </div>
-      <div>
-        {excursionData.images && <SwiperComponent imageData={excursionData} />}
+      <div className='w-full md:w-[80vw]  mx-auto pb-24'>
+        <div className='mb-6 md:mb-8'>
+          <h6 className='text-2xl md:text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
+            {excursionData.excursionName && excursionData.excursionName}
+          </h6>
+        </div>
+        <div>
+          {excursionData.images && (
+            <SwiperComponent imageData={excursionData} />
+          )}
+        </div>
+        <div className=' text-[#897172] dark:text-[#B6A999] px-8 md:px-24'>
+          {excursionData.description}
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export default function SwiperComponent({ imageData }: any) {
   const [selectedImage, setSelectedImage] = useState<any>(null);
   return (
     <div className='flex justify-center'>
-      <div className='w-full md:w-[80vw] px-8 md:px-24 mb-12'>
+      <div className='w-full md:w-[80vw] px-8 md:px-24 mb-8'>
         <Swiper
           modules={[Thumbs]}
           slidesPerView={1}
@@ -26,8 +26,8 @@ export default function SwiperComponent({ imageData }: any) {
                 <Image
                   src={urlFor(image)}
                   alt='Image'
-                  width={800}
-                  height={600}
+                  width={1000}
+                  height={800}
                   className='w-full aspect-[16/9] object-cover origin-bottom'
                 />
               </SwiperSlide>
