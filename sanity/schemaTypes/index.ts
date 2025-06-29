@@ -5,7 +5,16 @@ import { bannerImages } from "../schemas/bannerImages";
 import { excursions } from "../schemas/excursion";
 import { accordions } from "../schemas/accordions";
 import { aboutus } from "../schemas/aboutus";
+import { islandEssentials } from "../schemas/islandEssentials";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, accommodation, bannerImages, excursions, accordions, aboutus],
+  types: [
+    hero,
+    accommodation,
+    bannerImages,
+    excursions,
+    accordions,
+    aboutus,
+    islandEssentials,
+  ],
 };

@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import Accommodation from "./components/Accommodation";
 import Excursions from "./components/Excursions";
 import Accordions from "./components/Accordions";
+import IslandEssentials from "./components/IslandEssentials";
 
 async function getHeroData() {
   const query = `*[_type == "hero"]{
@@ -39,13 +40,19 @@ export default async function Home() {
         </h1>
         <Accommodation />
       </div>
-      <div className='px-4 md:px-12  py-12 md:my-12 min-h-screen'>
+      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+      <div className='px-4 md:px-12  py-12 md:my-12 '>
         <h1 className='text-[#897172] dark:text-[#B6A999] text-3xl md:text-7xl pb-8 md:pb-12 text-center font-extrabold'>
           Excursions
         </h1>
         <Excursions />
       </div>
-      <div className='w-[90vw] mx-auto'>
+      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+      <div className='px-4 md:px-12 py-12 md:py-24'>
+        <IslandEssentials />
+      </div>
+      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+      <div className='w-[90vw] mx-auto py-12'>
         <Accordions data={accordionData} />
       </div>
     </div>

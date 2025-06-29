@@ -11,7 +11,7 @@ export default function Accordions({ data }: any) {
   }
 
   return (
-    <div className='pb-10 pt-6 md:pt-12 '>
+    <div className='pb-10 pt-6  '>
       <div className='mx-auto'>
         <h5 className='text-[#897172] dark:text-[#B6A999] text-3xl md:text-7xl font-extrabold text-center mb-4'>
           FAQ
