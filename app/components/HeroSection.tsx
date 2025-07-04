@@ -32,19 +32,20 @@ export default function HeroSection({ data }: { data: any }) {
           //     },
           //           }}
         >
-          {data.map((item: any, index: number) => (
-            <SwiperSlide key={index}>
-              {
-                <Image
-                  src={urlFor(item.image)}
-                  width={1000}
-                  height={800}
-                  alt={item.title}
-                  className='aspect-[16/9] object-cover w-full h-[80vh] md:h-auto'
-                />
-              }
-            </SwiperSlide>
-          ))}
+          {data &&
+            data.map((item: any, index: number) => (
+              <SwiperSlide key={index}>
+                {item.image && (
+                  <Image
+                    src={urlFor(item.image)}
+                    width={1000}
+                    height={800}
+                    alt={item.title}
+                    className='aspect-[16/9] object-cover w-full h-[80vh] md:h-auto'
+                  />
+                )}
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>

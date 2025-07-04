@@ -4,7 +4,10 @@ import Image from "next/image";
 import React from "react";
 
 async function getIslandEssentialsData() {
-  const query = `*[_type == "islandEssentials"]`;
+  const query = `*[_type == "islandEssentials"]{
+  title,
+  image
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -17,22 +20,27 @@ export default async function IslandEssentials() {
         Island Essentials
       </h3>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
-        {data.map((item: any, index: number) => (
-          <div
-            key={index}
-            className='bg-white dark:bg-white/20 box-shadow-css rounded'>
-            <Image
-              src={urlFor(item.image)}
-              width={600}
-              height={400}
-              alt={item.title}
-              className='aspect-[4/3] object-cover w-full rounded-t'
-            />
-            <h6 className='text-[#897172] dark:text-[#B6A999] text-2xl mt-6 pb-8 md:pb-12 text-center font-bold'>
-              {item.title}
-            </h6>
-          </div>
-        ))}
+        {data &&
+          data.map((item: any, index: number) => (
+            <div
+              key={index}
+              className='bg-white dark:bg-white/20 box-shadow-css rounded'>
+              {item.image && (
+                <Image
+                  src={urlFor(item.image)}
+                  width={600}
+                  height={400}
+                  alt={item.title}
+                  className='aspect-[4/3] object-cover w-full rounded-t'
+                />
+              )}
+              {item.title && (
+                <h6 className='text-[#897172] dark:text-[#B6A999] text-2xl mt-6 pb-8 md:pb-12 text-center font-bold'>
+                  {item.title}
+                </h6>
+              )}
+            </div>
+          ))}
       </div>
     </div>
   );

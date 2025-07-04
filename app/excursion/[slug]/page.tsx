@@ -59,9 +59,11 @@ export default async function RoomDetails({
             <SwiperComponent imageData={excursionData} />
           )}
         </div>
-        <div className=' text-[#897172] dark:text-[#B6A999] px-8 md:px-24'>
-          {excursionData.description}
-        </div>
+        {excursionData.description && (
+          <div className=' text-[#897172] dark:text-[#B6A999] px-8 md:px-24'>
+            {excursionData.description}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -13,7 +13,10 @@ async function getBannerImage() {
 }
 
 async function getAboutusData() {
-  const query = `*[_type == "aboutus"]`;
+  const query = `*[_type == "aboutus"]{
+  mainImage,
+  description
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -39,13 +42,15 @@ export default async function Aboutus() {
       </h1>
       <section className='px-8 md:px-24 flex flex-col md:flex-row gap-4'>
         <div className='flex-1 order-1 md:order-2'>
-          <Image
-            src={urlFor(aboutus[0].mainImage)}
-            width={600}
-            height={400}
-            alt='Main Image'
-            className='w-full'
-          />
+          {aboutus[0].mainImage && (
+            <Image
+              src={urlFor(aboutus[0].mainImage)}
+              width={600}
+              height={400}
+              alt='Main Image'
+              className='w-full'
+            />
+          )}
         </div>
         <div className='flex-1 order-2 md:order-1 prose text-[#897172] dark:text-[#B6A999] mt-4 md:mt-0'>
           <PortableText value={aboutus[0].description} />
