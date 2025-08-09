@@ -55,11 +55,9 @@ export default function Footer() {
           Copyright © {year} Three Star Lodge
         </h5>
 
-        <Link href={"https://www.ahmedareef.com/"}>
-          <h5 className='text-xs text-[#897172] dark:text-[#B6A999] mt-2'>
-            Developed by Ahmed Areef
-          </h5>
-        </Link>
+        <h5 className='text-xs text-[#897172] dark:text-[#B6A999] mt-2'>
+          Developed by Ahmed Areef
+        </h5>
       </div>
     </footer>
   );

@@ -1,10 +1,10 @@
+import BackButton from "@/app/components/GoBack";
 import SwiperComponent from "@/app/components/SwiperComponent";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { FaArrowLeft, FaUmbrellaBeach, FaWifi } from "react-icons/fa6";
+import { FaUmbrellaBeach, FaWifi } from "react-icons/fa6";
 import { MdCoffeeMaker } from "react-icons/md";
 import { RiSailboatFill } from "react-icons/ri";
 
@@ -29,7 +29,7 @@ export default async function RoomDetails({
 
   return (
     <div className="bg-[url('/images/flower-bg-o.png')]  bg-center">
-      <div className='h-auto md:h-80 w-full overflow-hidden mb-6'>
+      <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
         {accommodationData.bannerImage && (
           <Image
             src={urlFor(accommodationData.bannerImage)}
@@ -41,11 +41,7 @@ export default async function RoomDetails({
         )}
       </div>
       <div className=' ps-8 md:ps-24  mb-12'>
-        <Link
-          href={"./"}
-          className='font-bold flex items-center gap-1 text-[#897172] dark:text-[#B6A999]'>
-          <FaArrowLeft /> Back
-        </Link>
+        <BackButton />
       </div>
       <div className='mb-6'>
         <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>

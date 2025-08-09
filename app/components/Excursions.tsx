@@ -15,7 +15,6 @@ async function getExcursionData() {
   const data = await client.fetch(query);
   return data;
 }
-
 export default async function Excursions() {
   const excursionData = await getExcursionData();
   return (
@@ -24,7 +23,7 @@ export default async function Excursions() {
         excursionData.map((excursion: any, index: number) => (
           <div
             key={index}
-            className=' relative bg-white dark:bg-white/10  box-shadow-css'>
+            className=' relative bg-white dark:bg-white/10  box-shadow-css h-full'>
             <div className=''>
               {excursion.coverImage && (
                 <Image
@@ -37,17 +36,19 @@ export default async function Excursions() {
               )}
             </div>
             {/* <div className='bg-black/30 w-full h-full absolute left-0 top-0 rounded'></div>  */}
-            <div className=' px-4 py-6'>
-              <h2 className='text-xl md:text-2xl font-bold  text-center mb-4 text-[#897172] dark:text-[#B6A999]'>
-                {excursion.excursionName}
-              </h2>
-              <h6 className='text-[#897172] dark:text-[#B6A999] line-clamp-4'>
-                {excursion.description}
-              </h6>
-              <div className='px-6'>
+            <div className=' px-4 py-6 flex flex-col justify-between h-[30vh]'>
+              <div>
+                <h2 className='text-xl md:text-2xl font-bold  text-center mb-4 text-[#897172] dark:text-[#B6A999]'>
+                  {excursion.excursionName}
+                </h2>
+                <h6 className='text-[#897172] dark:text-[#B6A999] line-clamp-4'>
+                  {excursion.description}
+                </h6>
+              </div>
+              <div className='md:px-6'>
                 <Link
                   href={`/excursion/${excursion.slug.current}`}
-                  className='px-4 py-1 bg-[#897172]/80 dark:bg-[#897172]/30 flex items-center justify-center gap-2 w-32 text-white dark:text-[#B6A999] text-xs mt-6 cursor-pointer hover:bg-[#897172] dark:hover:bg-[#897172]/50'>
+                  className='px-4 py-1 bg-[#897172]/80 dark:bg-[#897172]/30 flex items-center justify-center gap-2 w-32 text-white dark:text-[#B6A999] text-xs cursor-pointer hover:bg-[#897172] dark:hover:bg-[#897172]/50 '>
                   Learn More <FaArrowRight size={12} />
                 </Link>
               </div>

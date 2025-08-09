@@ -38,7 +38,7 @@ export default async function Accommodation() {
             <div className='bg-black/30 w-full h-full absolute left-0 top-0 rounded'></div>
             <div className=' absolute left-1/2 bottom-6  w-full -translate-x-1/2 p-2 '>
               {room.title && (
-                <h2 className='text-2xl md:text-3xl font-bold text-white text-center mb-12'>
+                <h2 className='text-2xl lg:text-3xl font-bold text-white text-center mb-12'>
                   {room.title}
                 </h2>
               )}

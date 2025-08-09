@@ -51,17 +51,7 @@ export default async function Home() {
         <IslandEssentials />
       </div>
       <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
-      <div>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster='/images/image-1.jpg'
-          className='w-full object-cover'>
-          <source src='/videos/webVideo.mp4' type='video/mp4' />
-        </video>
-      </div>
+
       <div className='w-[90vw] mx-auto py-12'>
         <Accordions data={accordionData} />
       </div>

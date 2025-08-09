@@ -1,10 +1,9 @@
+import BackButton from "@/app/components/GoBack";
 import SwiperComponent from "@/app/components/SwiperComponent";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa6";
 
 async function getExcursionData(slug: string) {
   const query = `*[_type == "excursions" && slug.current == "${slug}"][0]{
@@ -30,7 +29,7 @@ export default async function RoomDetails({
 
   return (
     <div className="bg-[url('/images/flower-bg-o.png')]  bg-center ">
-      <div className='h-auto md:h-80 w-full overflow-hidden mb-6'>
+      <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
         {excursionData.bannerImage && (
           <Image
             src={urlFor(excursionData.bannerImage)}
@@ -41,12 +40,8 @@ export default async function RoomDetails({
           />
         )}
       </div>
-      <div className=' ps-8 md:ps-24  mb-12'>
-        <Link
-          href={"./"}
-          className='font-bold flex items-center gap-1 text-[#897172] dark:text-[#B6A999]'>
-          <FaArrowLeft /> Back
-        </Link>
+      <div className=' ps-8 md:ps-24 mb-12'>
+        <BackButton />
       </div>
       <div className='w-full md:w-[80vw]  mx-auto pb-24'>
         <div className='mb-6 md:mb-8'>
