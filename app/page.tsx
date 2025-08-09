@@ -30,7 +30,7 @@ export default async function Home() {
   const accordionData = await accordionsData();
 
   return (
-    <div className=" w-full bg-[url('/images/flower-bg-o.png')] bg-center">
+    <div className=' w-full'>
       <HeroSection data={heroData} />
 
       <div className='px-4 md:px-12 py-24 md:my-12 '>
