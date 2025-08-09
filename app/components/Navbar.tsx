@@ -115,7 +115,7 @@ export default function Navbar() {
                 className='text-xl flex justify-center items-center'>
                 <Image
                   src={"/logo/logo.jpg"}
-                  alt='Hevana Maldives Logo'
+                  alt='Logo'
                   width={60}
                   height={60}
                   className='w-[45px] md:w-[75px]'
