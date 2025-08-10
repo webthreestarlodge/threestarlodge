@@ -15,7 +15,7 @@ async function getBannerImage() {
 export default async function Excursion() {
   const bannerImage = await getBannerImage();
   return (
-    <div className="pb-24 bg-[url('/images/flower-bg-o.png')]  bg-center ">
+    <div className='pb-24  '>
       <div className='md:h-[60vh] w-full overflow-hidden mb-12'>
         {bannerImage.image && (
           <Image

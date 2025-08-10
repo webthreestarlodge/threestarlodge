@@ -28,7 +28,7 @@ export default async function RoomDetails({
   const excursionData = await getExcursionData(slug);
 
   return (
-    <div className="bg-[url('/images/flower-bg-o.png')]  bg-center ">
+    <div className=''>
       <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
         {excursionData.bannerImage && (
           <Image

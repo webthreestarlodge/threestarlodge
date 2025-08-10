@@ -12,7 +12,8 @@ async function getAccomodationData(slug: string) {
   const query = `*[_type == "accommodation" && slug.current == "${slug}"][0]{
   bannerImage,
   title,
-  images
+  images,
+  amenities
   }`;
   const data = await client.fetch(query);
   return data;
@@ -53,7 +54,7 @@ export default async function RoomDetails({
           <SwiperComponent imageData={accommodationData} />
         )}
       </div>
-      <div className='p-12 h-screen w-full md:w-[80vw] mx-auto'>
+      <div className='p-12 w-full md:w-[80vw] mx-auto'>
         <div className='flex flex-col gap-6 justify-center items-center'>
           <h6 className='text-2xl font-bold text-[#897172] dark:text-[#B6A999]'>
             Most popular facilities
@@ -74,6 +75,25 @@ export default async function RoomDetails({
             <div className='flex flex-col gap-1 items-center'>
               <FaUmbrellaBeach className='text-2xl' />
               <h6 className='text-xs md:text-sm'>Beach</h6>
+            </div>
+          </div>
+          <div className='mt-4'>
+            <h6 className='text-xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
+              Ammenities
+            </h6>
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-4 text-sm'>
+              {accommodationData.amenities.map(
+                (amenity: string | any, index: number) => (
+                  <div key={index} className='flex items-center gap-2 mt-4'>
+                    <span className='text-[#897172] dark:text-[#B6A999]'>
+                      •
+                    </span>
+                    <span className='text-[#897172] dark:text-[#B6A999]'>
+                      {amenity.title}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
