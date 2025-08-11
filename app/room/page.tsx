@@ -3,6 +3,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
 import Accommodation from "../components/Accommodation";
+import RoomCalendar from "../components/RoomCalendar";
 
 async function getBannerImage() {
   const query = `*[_type == "bannerImages" && imageId == 1] | order(_createdAt asc)[0]{
@@ -34,6 +35,10 @@ export default async function Room() {
         <div className='min-h-screen'>
           <Accommodation />
         </div>
+      </div>
+      <div>
+        <h6>Bookings</h6>
+        <RoomCalendar />
       </div>
     </div>
   );

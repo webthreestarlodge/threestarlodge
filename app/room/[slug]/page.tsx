@@ -29,7 +29,7 @@ export default async function RoomDetails({
   const accommodationData = await getAccomodationData(slug);
 
   return (
-    <div className="bg-[url('/images/flower-bg-o.png')]  bg-center">
+    <div className=''>
       <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
         {accommodationData.bannerImage && (
           <Image
