@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Accommodation from "../components/Accommodation";
 import RoomCalendar from "../components/RoomCalendar";
+import RoomAvailabilityCheck from "../components/Availability";
 
 async function getBannerImage() {
   const query = `*[_type == "bannerImages" && imageId == 1] | order(_createdAt asc)[0]{
@@ -36,9 +37,14 @@ export default async function Room() {
           <Accommodation />
         </div>
       </div>
-      <div>
-        <h6>Bookings</h6>
+      <div className='px-8 md:px-12 mt-12'>
+        <h6 className='text-3xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
+          Bookings
+        </h6>
         <RoomCalendar />
+      </div>
+      <div className='px-8 md:px-12 mt-12'>
+        <RoomAvailabilityCheck />
       </div>
     </div>
   );
