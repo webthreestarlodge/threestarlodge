@@ -50,7 +50,7 @@ export default function SwiperComponent({ imageData }: any) {
                     alt='Image'
                     width={100}
                     height={80}
-                    className='w-full cursor-pointer aspect-[16/9] object-cover'
+                    className=' cursor-pointer aspect-[16/9] object-cover w-full md:w-40'
                   />
                 </SwiperSlide>
               ))}
