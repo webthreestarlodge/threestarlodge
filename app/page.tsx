@@ -55,6 +55,12 @@ export default async function Home() {
       <div className='w-[90vw] mx-auto py-12'>
         <Accordions data={accordionData} />
       </div>
+      <div>
+        <script src='https://elfsightcdn.com/platform.js' async></script>
+        <div
+          className='elfsight-app-9da51557-5826-4e97-a58e-a6d69b501ad1'
+          data-elfsight-app-lazy></div>
+      </div>
     </div>
   );
 }

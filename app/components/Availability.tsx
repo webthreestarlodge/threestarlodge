@@ -119,7 +119,7 @@ export default function RoomAvailabilityCheck() {
       </button>
 
       {/* Result Display */}
-      {availableRoomCount !== null && (
+      {availableRoomCount !== null && fromDate != "" && toDate != "" && (
         <div
           className={`mt-4 text-sm ${
             availableRoomCount > 0 ? "text-green-600" : "text-red-600"
