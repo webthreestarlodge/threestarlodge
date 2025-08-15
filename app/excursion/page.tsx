@@ -4,6 +4,8 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
+export const revalidate = 60;
+
 async function getBannerImage() {
   const query = `*[_type == "bannerImages" && imageId == 2] | order(_createdAt asc)[0]{
   image

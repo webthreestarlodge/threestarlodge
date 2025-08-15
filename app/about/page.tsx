@@ -4,6 +4,8 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 
+export const revalidate = 60;
+
 async function getBannerImage() {
   const query = `*[_type == "bannerImages" && imageId == 3] | order(_createdAt asc)[0]{
   image

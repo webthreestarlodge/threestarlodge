@@ -5,6 +5,9 @@ import Accommodation from "./components/Accommodation";
 import Excursions from "./components/Excursions";
 import Accordions from "./components/Accordions";
 import IslandEssentials from "./components/IslandEssentials";
+
+export const revalidate = 60;
+
 async function getHeroData() {
   const query = `*[_type == "hero"]{
   image,
