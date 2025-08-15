@@ -27,7 +27,7 @@ export default async function Aboutus() {
   return (
     <div className='pb-24'>
       <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
-        {bannerImage.image && (
+        {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
             width={1200}
@@ -42,7 +42,7 @@ export default async function Aboutus() {
       </h1>
       <section className='px-8 md:px-24 flex flex-col md:flex-row gap-4'>
         <div className='flex-1 order-1 md:order-2'>
-          {aboutus[0].mainImage && (
+          {aboutus[0]?.mainImage && (
             <Image
               src={urlFor(aboutus[0].mainImage)}
               width={600}
@@ -53,7 +53,7 @@ export default async function Aboutus() {
           )}
         </div>
         <div className='flex-1 order-2 md:order-1 prose text-[#897172] dark:text-[#B6A999] mt-4 md:mt-0'>
-          <PortableText value={aboutus[0].description} />
+          <PortableText value={aboutus[0]?.description} />
         </div>
       </section>
     </div>

@@ -16,7 +16,7 @@ export default async function Room() {
   return (
     <div className='pb-24 '>
       <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
-        {bannerImage.image && (
+        {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
             width={1200}

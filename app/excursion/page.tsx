@@ -17,7 +17,7 @@ export default async function Excursion() {
   return (
     <div className='pb-24  '>
       <div className='md:h-[60vh] w-full overflow-hidden mb-12'>
-        {bannerImage.image && (
+        {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
             width={1200}
