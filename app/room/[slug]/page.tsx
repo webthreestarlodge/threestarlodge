@@ -9,6 +9,8 @@ import { FaUmbrellaBeach, FaWifi } from "react-icons/fa6";
 import { MdCoffeeMaker } from "react-icons/md";
 import { RiSailboatFill } from "react-icons/ri";
 
+export const revalidate = 60;
+
 async function getAccomodationData(slug: string) {
   const query = `*[_type == "accommodation" && slug.current == "${slug}"][0]{
   bannerImage,
