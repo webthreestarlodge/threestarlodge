@@ -26,7 +26,7 @@ async function getAccomodationData(slug: string) {
 export default async function RoomDetails({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: "string" }>;
 }) {
   const { slug } = await params;
 
