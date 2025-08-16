@@ -95,7 +95,7 @@ async function getExcursionData(slug: string) {
 export default async function ExcursionDetails({
   params,
 }: {
-  params: Promise<{ slug: "string" }>;
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const excursionData = await getExcursionData(slug);
