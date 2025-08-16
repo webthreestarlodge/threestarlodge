@@ -5,6 +5,8 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
+export const revalidate = 60;
+
 async function getAccomodationData() {
   const query = `*[_type == "accommodation"]{
   coverImage,
@@ -13,7 +15,8 @@ async function getAccomodationData() {
   occupancy,
   slug
   }`;
-  const data = await client.fetch(query);
+  // const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
 }
 

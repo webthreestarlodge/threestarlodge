@@ -7,8 +7,7 @@ async function getBannerImage() {
   const query = `*[_type == "bannerImages" && imageId == 1] | order(_createdAt asc)[0]{
   image
   }`;
-  // const data = await client.fetch(query);
-  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  const data = await client.fetch(query);
   return data;
 }
 export const revalidate = 60;

@@ -18,15 +18,14 @@ async function getAccomodationData(slug: string) {
   images,
   amenities
   }`;
-
-  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  const data = await client.fetch(query);
   return data;
 }
 
 export default async function RoomDetails({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: "string" }>;
 }) {
   const { slug } = await params;
 

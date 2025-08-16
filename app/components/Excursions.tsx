@@ -5,6 +5,8 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
+export const revalidate = 60;
+
 async function getExcursionData() {
   const query = `*[_type == "excursions"]{
   coverImage,
@@ -12,7 +14,8 @@ async function getExcursionData() {
   excursionName,
   description
   }`;
-  const data = await client.fetch(query);
+  // const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
 }
 export default async function Excursions() {

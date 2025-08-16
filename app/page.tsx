@@ -13,7 +13,8 @@ async function getHeroData() {
   image,
   title
   }`;
-  const data = await client.fetch(query);
+  // const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
 }
 
@@ -24,7 +25,12 @@ async function accordionsData() {
   answer
   
   }`;
-  const accordionData = await client.fetch(query);
+  // const accordionData = await client.fetch(query);
+  const accordionData = await client.fetch(
+    query,
+    {},
+    { next: { revalidate: 60 } }
+  );
   return accordionData;
 }
 

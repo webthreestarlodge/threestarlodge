@@ -3,12 +3,15 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
 
+export const revalidate = 60;
+
 async function getIslandEssentialsData() {
   const query = `*[_type == "islandEssentials"]{
   title,
   image
   }`;
-  const data = await client.fetch(query);
+  // const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
 }
 

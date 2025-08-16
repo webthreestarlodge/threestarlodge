@@ -10,5 +10,6 @@ export const fetchBookingsWithRooms = async () => {
       title
     }
   }`;
-  return await client.fetch(query);
+  // return await client.fetch(query);
+  return await client.fetch(query, {}, { next: { revalidate: 60 } });
 };
