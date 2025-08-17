@@ -9,7 +9,7 @@ export default function BackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className='cursor-pointer font-bold flex items-center gap-1 text-[#897172] dark:text-[#B6A999]'>
+      className='cursor-pointer font-bold flex items-center gap-1 text-[#897172] dark:text-gray-300'>
       <FaArrowLeft />
       Go Back
     </button>

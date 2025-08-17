@@ -36,7 +36,7 @@ export default async function Aboutus() {
             width={1200}
             height={600}
             alt='banner image'
-            className='w-full h-auto aspect-[3/1] object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
           />
         )}
       </div>

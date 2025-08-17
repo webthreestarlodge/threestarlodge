@@ -86,8 +86,8 @@ export const accommodation = defineType({
       ],
     }),
     defineField({
-      name: "facilities",
-      title: "Facilities",
+      name: "general",
+      title: "General",
       type: "array",
       of: [
         {

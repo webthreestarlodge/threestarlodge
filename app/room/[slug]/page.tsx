@@ -1,4 +1,3 @@
-import RoomAvailabilityCheck from "@/app/components/Availability";
 import BackButton from "@/app/components/GoBack";
 import SwiperComponent from "@/app/components/SwiperComponent";
 import { client } from "@/sanity/lib/client";
@@ -16,7 +15,8 @@ async function getAccomodationData(slug: string) {
   bannerImage,
   title,
   images,
-  amenities
+  amenities,
+  general
   }`;
 
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
@@ -41,7 +41,7 @@ export default async function RoomDetails({
             width={1000}
             height={600}
             alt='banner image'
-            className='w-full h-auto object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
           />
         )}
       </div>
@@ -49,7 +49,7 @@ export default async function RoomDetails({
         <BackButton />
       </div>
       <div className='mb-6'>
-        <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
+        <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-gray-300'>
           {accommodationData.title && accommodationData.title}
         </h6>
       </div>
@@ -59,12 +59,12 @@ export default async function RoomDetails({
         )}
       </div>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-8 md:px-24 mb-12 w-full md:w-[80vw] mx-auto'>
-        <div className='md:px-12 py-6 w-full mx-auto  md:col-span-2  bg-[#897172]/10'>
+        <div className='px-2 md:px-12 py-6 w-full mx-auto  md:col-span-2  bg-[#897172]/10'>
           <div className='flex flex-col gap-6 justify-center items-center'>
-            <h6 className='text-2xl font-bold text-[#897172] dark:text-[#B6A999]'>
+            <h6 className='text-2xl font-bold text-[#897172] dark:text-gray-300'>
               Most popular facilities
             </h6>
-            <div className='flex gap-12 text-[#897172] dark:text-[#B6A999]'>
+            <div className='flex gap-12 text-[#897172] dark:text-gray-300'>
               <div className='flex flex-col gap-1 items-center'>
                 <RiSailboatFill className='text-2xl' />
                 <h6 className='text-xs md:text-sm'>Airport Transfer</h6>
@@ -83,17 +83,17 @@ export default async function RoomDetails({
               </div>
             </div>
             <div className='mt-4'>
-              <h6 className='text-xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
+              <h6 className='text-xl font-bold text-center text-[#897172] dark:text-gray-300'>
                 Ammenities
               </h6>
               <div className='grid grid-cols-3 md:grid-cols-4 gap-4 text-xs md:text-sm'>
                 {accommodationData.amenities.map(
                   (amenity: string | any, index: number) => (
                     <div key={index} className='flex items-center gap-2 mt-4'>
-                      <span className='text-[#897172] dark:text-[#B6A999]'>
+                      <span className='text-[#897172] dark:text-gray-300'>
                         •
                       </span>
-                      <span className='text-[#897172] dark:text-[#B6A999]'>
+                      <span className='text-[#897172] dark:text-gray-300'>
                         {amenity.title}
                       </span>
                     </div>
@@ -104,7 +104,21 @@ export default async function RoomDetails({
           </div>
         </div>
         <div className='w-full md:px-12 py-6 bg-[#897172]/10'>
-          <RoomAvailabilityCheck />
+          <h6 className='text-xl font-bold text-center text-[#897172] dark:text-gray-300'>
+            General
+          </h6>
+          <div>
+            {accommodationData?.general?.map(
+              (item: string | any, index: number) => (
+                <div
+                  key={index}
+                  className='flex items-center gap-1 text-[#897172] dark:text-gray-300 mt-3'>
+                  <span className='text-sm'>•</span>
+                  <span className='text-sm '>{item.title}</span>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -25,12 +25,12 @@ export default async function Room() {
             width={1200}
             height={600}
             alt='banner image'
-            className='w-full h-auto aspect-[3/1] object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
           />
         )}
       </div>
       <div className='px-8 md:px-12'>
-        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-[#B6A999] font-extrabold text-center mb-8 md:mb-12 '>
+        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-gray-300 font-extrabold text-center mb-8 md:mb-12 '>
           Rooms
         </h1>
         <div className='min-h-screen'>
