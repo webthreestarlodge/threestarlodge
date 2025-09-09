@@ -30,8 +30,8 @@ export default async function Excursion() {
           />
         )}
       </div>
-      <div className='px-12'>
-        <h1 className='text-[#897172] dark:text-[#B6A999] text-3xl md:text-7xl pb-8 md:pb-12 text-center font-extrabold'>
+      <div className='px-6 md:px-12 w-full md:w-[80vw] mx-auto'>
+        <h1 className='text-[#897172] dark:text-gray-300 text-2xl md:text-7xl pb-8 md:pb-12 text-center font-semibold uppercase'>
           Excursions
         </h1>
         <div>

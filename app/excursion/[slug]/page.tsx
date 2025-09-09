@@ -120,7 +120,7 @@ export default async function ExcursionDetails({
 
       <div className='w-full md:w-[80vw] mx-auto pb-24'>
         <div className='mb-6 md:mb-8'>
-          <h6 className='text-2xl md:text-5xl font-bold text-center text-[#897172] dark:text-[#B6A999]'>
+          <h6 className='text-2xl md:text-5xl font-bold text-center text-[#897172] dark:text-gray-300'>
             {excursionData?.excursionName}
           </h6>
         </div>
@@ -128,7 +128,7 @@ export default async function ExcursionDetails({
         {excursionData?.images && <SwiperComponent imageData={excursionData} />}
 
         {excursionData?.description && (
-          <div className='text-[#897172] dark:text-[#B6A999] px-8 md:px-24'>
+          <div className='text-[#897172] dark:text-gray-300 px-8 md:px-24'>
             {excursionData.description}
           </div>
         )}

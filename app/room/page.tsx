@@ -17,20 +17,20 @@ export default async function Room() {
   const bannerImage = await getBannerImage();
 
   return (
-    <div className='pb-24 '>
-      <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
+    <div className='pb-24'>
+      <div className='h-full md:h-[85vh] w-full overflow-hidden mb-8 md:mb-12'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
             width={1200}
             height={600}
             alt='banner image'
-            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[16/9] object-cover'
           />
         )}
       </div>
-      <div className='px-8 md:px-12'>
-        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-gray-300 font-extrabold text-center mb-8 md:mb-12 '>
+      <div className='px-6 md:px-12 w-full md:w-[80vw] mx-auto'>
+        <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-gray-300 font-semibold text-center mb-8 md:mb-8 uppercase'>
           Rooms
         </h1>
         <div className='min-h-screen'>

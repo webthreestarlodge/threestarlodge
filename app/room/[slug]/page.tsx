@@ -34,26 +34,26 @@ export default async function RoomDetails({
 
   return (
     <div className=''>
-      <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
+      <div className='h-auto md:h-[85vh] w-full overflow-hidden mb-6'>
         {accommodationData.bannerImage && (
           <Image
             src={urlFor(accommodationData.bannerImage)}
             width={1000}
             height={600}
             alt='banner image'
-            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[16/9] object-cover'
           />
         )}
       </div>
-      <div className=' ps-8 md:ps-24  mb-12'>
+      <div className=' ps-8 md:ps-24 pb-8 md:mb-12'>
         <BackButton />
       </div>
-      <div className='mb-6'>
-        <h6 className='text-5xl font-bold text-center text-[#897172] dark:text-gray-300'>
+      <div className='mb-4 md:mb-6'>
+        <h6 className='text-2xl md:text-5xl font-semibold text-center text-[#897172] dark:text-gray-300'>
           {accommodationData.title && accommodationData.title}
         </h6>
       </div>
-      <div className='mb-12'>
+      <div className='mb-6 md:mb-12'>
         {accommodationData.images && (
           <SwiperComponent imageData={accommodationData} />
         )}
@@ -61,7 +61,7 @@ export default async function RoomDetails({
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-8 md:px-24 mb-12 w-full md:w-[80vw] mx-auto'>
         <div className='px-2 md:px-12 py-6 w-full mx-auto  md:col-span-2  bg-[#897172]/10'>
           <div className='flex flex-col gap-6 justify-center items-center'>
-            <h6 className='text-2xl font-bold text-[#897172] dark:text-gray-300'>
+            <h6 className='text-xl md:text-2xl font-bold text-[#897172] dark:text-gray-300'>
               Most popular facilities
             </h6>
             <div className='flex gap-12 text-[#897172] dark:text-gray-300'>

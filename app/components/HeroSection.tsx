@@ -11,7 +11,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 export default function HeroSection({ data }: { data: any }) {
   return (
-    <div className='md:h-screen overflow-hidden'>
+    <div className='h-full md:h-[95vh] overflow-hidden'>
       <div>
         <Swiper
           modules={[Autoplay]}
@@ -41,7 +41,7 @@ export default function HeroSection({ data }: { data: any }) {
                     width={1000}
                     height={800}
                     alt={item.title}
-                    className='aspect-[16/9] object-cover w-full h-[80vh] md:h-auto'
+                    className='aspect-[4/3] md:aspect-[16/9] object-cover w-full h-[50vh] md:h-auto'
                   />
                 )}
               </SwiperSlide>

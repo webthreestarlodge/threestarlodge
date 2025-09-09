@@ -56,11 +56,11 @@ export default async function Home() {
           <h6 className='text-white text-xs'>
             <div>
               {availabilityData[0].availableRooms > 0 ? (
-                <span className='text-[#B6A999] dark:text-gray-300 font-bold'>
+                <span className='text-white dark:text-gray-300 font-bold'>
                   {availabilityData[0].availableRooms} Room(s) Available
                 </span>
               ) : (
-                <span className='text-[#B6A999] dark:text-gray-300 font-bold'>
+                <span className='text-white dark:text-gray-300 font-bold'>
                   No Rooms Available
                 </span>
               )}
@@ -71,30 +71,32 @@ export default async function Home() {
 
       <HeroSection data={heroData} />
 
-      <div className='px-4 md:px-12 py-24 md:my-12 '>
-        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-gray-300 font-extrabold text-center mb-8 md:mb-12 '>
-          Rooms
-        </h1>
-        <Accommodation />
-      </div>
-      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
-      <div className='px-4 md:px-12  py-12 md:my-12 '>
-        <h1 className='text-[#897172] dark:text-gray-300 text-3xl md:text-7xl pb-8 md:pb-12 text-center font-extrabold'>
-          Excursions
-        </h1>
-        <Excursions />
-      </div>
-      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
-      <div className='px-4 md:px-12 py-12 md:py-24'>
-        <IslandEssentials />
-      </div>
-      <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+      <div className='w-full md:w-[80vw] mx-auto'>
+        <div className='px-4 md:px-12 py-8 md:my-12 '>
+          <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-gray-300 font-semibold text-center mb-4 md:mb-8 uppercase'>
+            Rooms
+          </h1>
+          <Accommodation />
+        </div>
+        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+        <div className='px-4 md:px-12  py-12 md:my-12 '>
+          <h1 className='text-[#897172] dark:text-gray-300 text-2xl md:text-6xl pb-8 md:pb-8 text-center font-semibold uppercase'>
+            Excursions
+          </h1>
+          <Excursions />
+        </div>
+        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+        <div className='px-4 md:px-12 py-12 md:py-24'>
+          <IslandEssentials />
+        </div>
+        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
 
-      <div className='w-[90vw] mx-auto py-12'>
-        <Accordions data={accordionData} />
-      </div>
-      <div>
-        <WhatsAppWidget />
+        <div className='w-[90vw] mx-auto py-12'>
+          <Accordions data={accordionData} />
+        </div>
+        <div>
+          <WhatsAppWidget />
+        </div>
       </div>
     </div>
   );

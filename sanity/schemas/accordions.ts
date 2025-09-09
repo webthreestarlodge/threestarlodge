@@ -2,7 +2,7 @@ import { defineType, defineField } from "sanity";
 
 export const accordions = defineType({
   name: "accordions",
-  title: "Accordions (FAQ)",
+  title: "FAQ",
   type: "document",
   fields: [
     defineField({

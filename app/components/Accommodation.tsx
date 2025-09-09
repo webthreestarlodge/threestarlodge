@@ -39,9 +39,9 @@ export default async function Accommodation() {
               )}
             </div>
             <div className='bg-black/30 w-full h-full absolute left-0 top-0 rounded'></div>
-            <div className=' absolute left-1/2 bottom-6  w-full -translate-x-1/2 p-2 '>
+            <div className=' absolute left-1/2 bottom-6  w-full -translate-x-1/2 p-1 md:p-2 '>
               {room.title && (
-                <h2 className='text-2xl lg:text-3xl font-bold text-white text-center mb-12'>
+                <h2 className='text-xl lg:text-2xl font-semibold text-white text-center mb-12'>
                   {room.title}
                 </h2>
               )}
@@ -50,7 +50,7 @@ export default async function Accommodation() {
                   {room.bedType && (
                     <h6 className='text-sm'>
                       {" "}
-                      <span className='text-sm text-orange-200'>
+                      <span className='text-xs md:text-sm text-orange-200'>
                         Beds /
                       </span>{" "}
                       {room.bedType}
@@ -58,7 +58,7 @@ export default async function Accommodation() {
                   )}
                   {room.occupancy && (
                     <h6 className='text-sm'>
-                      <span className='text-sm text-orange-200'>
+                      <span className='text-xs md:text-sm text-orange-200'>
                         Occupancy /
                       </span>{" "}
                       {room.occupancy} Persons
@@ -68,7 +68,7 @@ export default async function Accommodation() {
                 {room.slug && (
                   <Link
                     href={`/room/${room.slug.current}`}
-                    className='px-4 py-1 bg-[#897172]/70 dark:bg-[#897172]/60 flex items-center justify-center gap-2 w-32 text-white text-sm mt-6 cursor-pointer hover:bg-[#897172] dark:hover:bg-[#897172]'>
+                    className='px-4 py-1 bg-[#897172]/70 dark:bg-[#897172]/60 flex items-center justify-center gap-2 w-32 text-white text-xs md:text-sm mt-6 cursor-pointer hover:bg-[#897172] dark:hover:bg-[#897172]'>
                     Learn More <FaArrowRight size={12} />
                   </Link>
                 )}

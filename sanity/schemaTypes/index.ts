@@ -6,7 +6,6 @@ import { excursions } from "../schemas/excursion";
 import { accordions } from "../schemas/accordions";
 import { aboutus } from "../schemas/aboutus";
 import { islandEssentials } from "../schemas/islandEssentials";
-import { bookingSchema } from "../schemas/bookings";
 import availability from "../schemas/availability";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -18,7 +17,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     accordions,
     aboutus,
     islandEssentials,
-    bookingSchema,
     availability,
   ],
 };

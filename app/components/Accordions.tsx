@@ -13,7 +13,7 @@ export default function Accordions({ data }: any) {
   return (
     <div className='pb-10 pt-6  '>
       <div className='mx-auto'>
-        <h5 className='text-[#897172] dark:text-gray-300 text-3xl md:text-7xl font-extrabold text-center mb-4'>
+        <h5 className='text-[#897172] dark:text-gray-300 text-2xl md:text-6xl font-semibold text-center mb-4'>
           FAQ
         </h5>
         {data &&
