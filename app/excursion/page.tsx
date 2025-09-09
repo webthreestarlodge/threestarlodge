@@ -19,7 +19,7 @@ export default async function Excursion() {
   const bannerImage = await getBannerImage();
   return (
     <div className='pb-24  '>
-      <div className='h-full md:h-[85vh] w-full overflow-hidden mb-8 md:mb-12'>
+      <div className='h-full md:h-[90vh] w-full overflow-hidden mb-8 md:mb-12'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}

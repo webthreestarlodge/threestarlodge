@@ -31,7 +31,7 @@ export default async function Aboutus() {
 
   return (
     <div className='pb-24'>
-      <div className='h-full md:h-[85vh] w-full overflow-hidden mb-6 md:mb-8'>
+      <div className='h-full md:h-[90vh] w-full overflow-hidden mb-6 md:mb-8'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}

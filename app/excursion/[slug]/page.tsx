@@ -102,7 +102,7 @@ export default async function ExcursionDetails({
 
   return (
     <div className=''>
-      <div className='h-auto md:h-[60vh] w-full overflow-hidden mb-6'>
+      <div className='h-auto md:h-[90vh] w-full overflow-hidden mb-6'>
         {excursionData?.bannerImage && (
           <Image
             src={urlFor(excursionData.bannerImage)}
