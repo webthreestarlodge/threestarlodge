@@ -9,12 +9,14 @@ export const hero = defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "image",
       title: "Image",
       type: "image",
       options: { hotspot: true },
+      validation: (rule) => rule.required(),
     }),
   ],
 });
