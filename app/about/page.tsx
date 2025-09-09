@@ -31,19 +31,19 @@ export default async function Aboutus() {
 
   return (
     <div className='pb-24'>
-      <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
+      <div className='h-full md:h-[85vh] w-full overflow-hidden mb-6 md:mb-8'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
             width={1200}
             height={600}
             alt='banner image'
-            className='w-full h-auto aspect-[4/3] md:aspect-[3/1] object-cover'
+            className='w-full h-auto aspect-[4/3] md:aspect-[16/9] object-cover'
           />
         )}
       </div>
-      <div className='w-full md:w-[80vw] mx-auto'>
-        <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-white font-semibold text-center mb-6 md:mb-12 '>
+      <div className='w-full md:w-[85vw] mx-auto'>
+        <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-white font-semibold text-center mb-6 md:mb-12 uppercase'>
           About us
         </h1>
         <section className='px-8 md:px-24 flex flex-col md:flex-row gap-4'>

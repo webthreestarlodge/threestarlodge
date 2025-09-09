@@ -48,7 +48,7 @@ export default async function Accommodation() {
               <div className='px-6'>
                 <div className='flex justify-between text-white font-bold mb-6'>
                   {room.bedType && (
-                    <h6 className='text-sm'>
+                    <h6 className='text-xs md:text-sm'>
                       {" "}
                       <span className='text-xs md:text-sm text-orange-200'>
                         Beds /
@@ -57,7 +57,7 @@ export default async function Accommodation() {
                     </h6>
                   )}
                   {room.occupancy && (
-                    <h6 className='text-sm'>
+                    <h6 className='text-xs md:text-sm'>
                       <span className='text-xs md:text-sm text-orange-200'>
                         Occupancy /
                       </span>{" "}

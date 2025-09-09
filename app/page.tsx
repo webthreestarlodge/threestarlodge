@@ -91,7 +91,7 @@ export default async function Home() {
         </div>
         <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
 
-        <div className='w-[90vw] mx-auto py-12'>
+        <div className='px-4 w-full md:w-[80vw] mx-auto py-12'>
           <Accordions data={accordionData} />
         </div>
         <div>
