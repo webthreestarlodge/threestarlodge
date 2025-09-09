@@ -28,6 +28,10 @@ const navLinks = [
     name: "About us",
     url: "/about",
   },
+  {
+    name: "Gallery",
+    url: "/gallery",
+  },
 ];
 
 const containerVars = {
@@ -192,7 +196,7 @@ export default function Navbar() {
                   </div>
                   {navLinks.map((navItem, index) => {
                     return (
-                      <div key={index} className='overflow-hidden pt-12'>
+                      <div key={index} className='overflow-hidden pt-8'>
                         <motion.div
                           variants={linkVars}
                           className='mx-4 py-4 text-center'

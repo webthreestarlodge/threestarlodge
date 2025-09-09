@@ -1,13 +1,13 @@
-import React from "react";
-import Excursions from "../components/Excursions";
 import { client } from "@/sanity/lib/client";
-import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
+import React from "react";
+import ImageGallery from "../components/ImageGallery";
 
 export const revalidate = 60;
 
 async function getBannerImage() {
-  const query = `*[_type == "bannerImages" && imageId == 2] | order(_createdAt asc)[0]{
+  const query = `*[_type == "bannerImages" && imageId == 4] | order(_createdAt asc)[0]{
   image
   }`;
   // const data = await client.fetch(query);
@@ -15,11 +15,21 @@ async function getBannerImage() {
   return data;
 }
 
-export default async function Excursion() {
+async function getGalleryImages() {
+  const query = `*[_type == "gallery"]{
+    image
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
+export default async function page() {
   const bannerImage = await getBannerImage();
+  const imageData = await getGalleryImages();
+
   return (
-    <div className='pb-24  '>
-      <div className='h-full md:h-[85vh] w-full overflow-hidden mb-8 md:mb-12'>
+    <div>
+      <div className='h-full md:h-[80vh] w-full overflow-hidden mb-8 md:mb-12'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}
@@ -31,11 +41,11 @@ export default async function Excursion() {
         )}
       </div>
       <div className='px-6 md:px-12 w-full md:w-[80vw] mx-auto'>
-        <h1 className='text-[#897172] dark:text-gray-300 text-2xl md:text-6xl pb-8 md:pb-12 text-center font-semibold uppercase'>
-          Excursions
+        <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-white font-semibold text-center mb-4 md:mb-8 uppercase'>
+          Gallery
         </h1>
         <div>
-          <Excursions />
+          <ImageGallery data={imageData} />
         </div>
       </div>
     </div>
