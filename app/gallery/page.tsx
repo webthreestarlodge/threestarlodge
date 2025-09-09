@@ -29,7 +29,7 @@ export default async function page() {
 
   return (
     <div>
-      <div className='h-full md:h-[80vh] w-full overflow-hidden mb-8 md:mb-12'>
+      <div className='h-full md:h-[90vh] w-full overflow-hidden mb-8 md:mb-12'>
         {bannerImage?.image && (
           <Image
             src={urlFor(bannerImage.image)}

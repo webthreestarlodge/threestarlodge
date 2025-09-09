@@ -34,7 +34,7 @@ export default async function RoomDetails({
 
   return (
     <div className=''>
-      <div className='h-auto md:h-[85vh] w-full overflow-hidden mb-6'>
+      <div className='h-auto md:h-[90vh] w-full overflow-hidden mb-6'>
         {accommodationData.bannerImage && (
           <Image
             src={urlFor(accommodationData.bannerImage)}

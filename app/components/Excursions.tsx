@@ -39,7 +39,7 @@ export default async function Excursions() {
               )}
             </div>
             {/* <div className='bg-black/30 w-full h-full absolute left-0 top-0 rounded'></div>  */}
-            <div className=' px-4 py-6 flex flex-col justify-between items-center min-h-[35vh] md:min-h-[40vh]'>
+            <div className=' px-4 py-6 flex flex-col justify-between items-center min-h-[35vh] '>
               <div>
                 <h2 className='text-base md:text-xl font-semibold  text-center mb-4 text-[#897172] dark:text-gray-300'>
                   {excursion.excursionName}
