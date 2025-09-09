@@ -18,7 +18,8 @@ async function getBannerImage() {
 async function getAboutusData() {
   const query = `*[_type == "aboutus"]{
   mainImage,
-  description
+  description,
+  team[]
   }`;
   const data = await client.fetch(query);
   return data;
@@ -27,6 +28,7 @@ async function getAboutusData() {
 export default async function Aboutus() {
   const bannerImage = await getBannerImage();
   const aboutus = await getAboutusData();
+
   return (
     <div className='pb-24'>
       <div className='h-full md:h-[60vh] w-full overflow-hidden mb-8 md:mb-12'>
@@ -41,7 +43,7 @@ export default async function Aboutus() {
         )}
       </div>
       <div className='w-full md:w-[80vw] mx-auto'>
-        <h1 className='text-3xl md:text-7xl text-[#897172] dark:text-white font-semibold text-center mb-6 md:mb-12 '>
+        <h1 className='text-2xl md:text-6xl text-[#897172] dark:text-white font-semibold text-center mb-6 md:mb-12 '>
           About us
         </h1>
         <section className='px-8 md:px-24 flex flex-col md:flex-row gap-4'>
@@ -60,6 +62,26 @@ export default async function Aboutus() {
             <PortableText value={aboutus[0]?.description} />
           </div>
         </section>
+        <div className='w-full md:w-[80vw] mx-auto px-8 md:px-24 mt-12 md:mt-24'>
+          <h3 className='text-xl md:text-3xl text-[#897172] dark:text-white text-center mb-4'>
+            Meet Our Team
+          </h3>
+          <div className='flex flex-row gap-6 flex-wrap justify-center'>
+            {aboutus[0].team.map((staff: any, index: number) => (
+              <div key={index}>
+                <Image
+                  src={urlFor(staff.memberImage)}
+                  width={100}
+                  height={100}
+                  alt='Image'
+                />
+                <h6 className='text-sm md:text-base text-center text-[#897172] dark:text-white mt-4'>
+                  {staff.name}
+                </h6>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

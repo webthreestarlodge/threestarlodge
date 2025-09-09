@@ -9,17 +9,20 @@ export const bannerImages = defineType({
       name: "pageName",
       title: "Page Name",
       type: "string",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "imageId",
       title: "Image Id",
       type: "number",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "image",
       title: "Banner Image",
       type: "image",
       options: { hotspot: true },
+      validation: (rule) => rule.required(),
     }),
   ],
 });

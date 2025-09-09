@@ -10,16 +10,19 @@ export const bookingSchema = defineType({
       title: "Rooms",
       type: "reference",
       to: [{ type: "accommodation" }],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "fromDate",
       title: "From Date",
       type: "date",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "toDate",
       title: "To Date",
       type: "date",
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
