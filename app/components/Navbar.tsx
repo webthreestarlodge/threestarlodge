@@ -7,7 +7,6 @@ import { MdClose } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { ThemeToggler } from "@/components/ui/ThemeToggler";
 
 const navLinks = [
@@ -209,14 +208,6 @@ export default function Navbar() {
                     );
                   })}
                 </motion.div>
-                <div className='flex justify-center gap-6 w-screen mt-8'>
-                  <Link onClick={() => setIsOpen(false)} href={""}>
-                    <AiFillFacebook size={40} className='text-white' />
-                  </Link>
-                  <Link onClick={() => setIsOpen(false)} href={""}>
-                    <AiFillInstagram size={40} className='text-white' />
-                  </Link>
-                </div>
               </motion.div>
             )}
           </AnimatePresence>
