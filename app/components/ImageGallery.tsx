@@ -8,6 +8,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { urlFor } from "@/sanity/lib/image";
+import Motion from "./Motion";
 
 export default function ImageGallery({ data }: { data: any }) {
   const [open, setOpen] = useState(false);
@@ -36,28 +37,29 @@ export default function ImageGallery({ data }: { data: any }) {
     <div className='min-h-screen px-4 py-8 sm:px-8 md:px-12 lg:px-24 '>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {data?.map((img: any, index: number) => (
-          <div
-            key={index}
-            className='cursor-pointer w-full'
-            onClick={() => {
-              setIndex(index);
-              setOpen(true);
-            }}>
-            {img.image ? (
-              <Image
-                src={urlFor(img.image)}
-                width={1000}
-                height={600}
-                alt={`Image ${index + 1}`}
-                className='w-full aspect-[16/9] object-cover rounded-md hover:opacity-90 transition'
-              />
-            ) : (
-              <h6>No Image</h6>
-            )}
-            {/* <p className='text-sm text-center mt-2 text-gray-600 dark:text-foreground'>
+          <Motion key={index}>
+            <div
+              className='cursor-pointer w-full'
+              onClick={() => {
+                setIndex(index);
+                setOpen(true);
+              }}>
+              {img.image ? (
+                <Image
+                  src={urlFor(img.image)}
+                  width={1000}
+                  height={600}
+                  alt={`Image ${index + 1}`}
+                  className='w-full aspect-[16/9] object-cover rounded-md hover:opacity-90 transition'
+                />
+              ) : (
+                <h6>No Image</h6>
+              )}
+              {/* <p className='text-sm text-center mt-2 text-gray-600 dark:text-foreground'>
               {img.title}
             </p> */}
-          </div>
+            </div>
+          </Motion>
         ))}
       </div>
 

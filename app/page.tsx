@@ -6,6 +6,7 @@ import Excursions from "./components/Excursions";
 import Accordions from "./components/Accordions";
 import IslandEssentials from "./components/IslandEssentials";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import Motion from "./components/Motion";
 
 export const revalidate = 60;
 
@@ -78,22 +79,28 @@ export default async function Home() {
           </h1>
           <Accommodation />
         </div>
+
         <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+
         <div className='px-4 md:px-12  py-12 md:my-12 '>
           <h1 className='text-[#897172] dark:text-gray-300 text-2xl md:text-6xl pb-8 md:pb-8 text-center font-semibold uppercase'>
             Excursions
           </h1>
           <Excursions />
         </div>
-        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
-        <div className='px-4 md:px-12 py-12 md:py-24'>
-          <IslandEssentials />
-        </div>
-        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
 
-        <div className='px-4 w-full md:w-[80vw] mx-auto py-12'>
-          <Accordions data={accordionData} />
-        </div>
+        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+        <Motion>
+          <div className='px-4 md:px-12 py-12 md:py-24'>
+            <IslandEssentials />
+          </div>{" "}
+        </Motion>
+        <hr className='h-0.5 border-t-0 bg-[#B6A999]/40 dark:bg-[#B6A999]/30' />
+        <Motion>
+          <div className='px-4 w-full md:w-[80vw] mx-auto py-12'>
+            <Accordions data={accordionData} />
+          </div>
+        </Motion>
         <div>
           <WhatsAppWidget />
         </div>
