@@ -52,20 +52,12 @@ export default async function Home() {
 
   return (
     <div className=' w-full relative '>
-      {availabilityData && (
+      {availabilityData && availabilityData[0].availableRooms > 0 && (
         <div className='fixed top-16 md:top-28 right-0 z-50 bg-[#574142]/60 dark:bg-white/10  py-1 md:py-2 px-4 md:px-6'>
           <h6 className='text-white text-xs'>
-            <div>
-              {availabilityData[0].availableRooms > 0 ? (
-                <span className='text-white dark:text-gray-300 font-bold'>
-                  {availabilityData[0].availableRooms} Room(s) Available
-                </span>
-              ) : (
-                <span className='text-white dark:text-gray-300 font-bold'>
-                  No Rooms Available
-                </span>
-              )}
-            </div>
+            <span className='text-white dark:text-gray-300 font-bold'>
+              {availabilityData[0].availableRooms} Room(s) Available
+            </span>
           </h6>
         </div>
       )}
