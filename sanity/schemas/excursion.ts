@@ -50,5 +50,10 @@ export const excursions = defineType({
         },
       ],
     }),
+    defineField({
+      name: "included",
+      title: "Included",
+      type: "boolean",
+    }),
   ],
 });
