@@ -13,7 +13,8 @@ async function getExcursionData() {
   coverImage,
   slug,
   excursionName,
-  description
+  description,
+  included
   }`;
   // const data = await client.fetch(query);
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
@@ -27,7 +28,7 @@ export default async function Excursions() {
         excursionData.map((excursion: any, index: number) => (
           <Motion key={index}>
             <div className=' relative bg-white dark:bg-white/10  box-shadow-css h-full'>
-              <div className=''>
+              <div className='relative'>
                 {excursion.coverImage && (
                   <Image
                     src={urlFor(excursion.coverImage)}
@@ -36,6 +37,11 @@ export default async function Excursions() {
                     alt='Image'
                     className='w-full aspect-[4/3] object-cover rounded'
                   />
+                )}
+                {excursion.included && (
+                  <h6 className='absolute right-4 top-4 bg-white/70 rounded dark:bg-gray-500 px-2 py-1 text-xs text-green-800'>
+                    Included in FB
+                  </h6>
                 )}
               </div>
               {/* <div className='bg-black/30 w-full h-full absolute left-0 top-0 rounded'></div>  */}
